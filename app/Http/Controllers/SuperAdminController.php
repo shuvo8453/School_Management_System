@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SuperAdminController extends Controller
@@ -13,14 +14,19 @@ class SuperAdminController extends Controller
     }
 
     public function dashboard(){
-        return view('super-admin.pages.dashboard');
+        if(auth()){
+            $user = auth()->user();
+            return view('super-admin.pages.dashboard',compact('user'));
+        }else{
+            return redirect()->route('login');
+        }
+
      }
      public function Profile(){
         return view('admin.pages.profile');
 
      }
-     public function signing(){
-        return view('admin.pages.signing');
-
+     public function signin(){
+        return view('signin');
      }
 }

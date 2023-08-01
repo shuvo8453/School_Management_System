@@ -40,7 +40,8 @@
                                     <div class="text-center">
                                         <img src="{{ asset('admin/img/avatars/avatar.jpg') }}" alt="Charles Hall" class="img-fluid rounded-circle" width="132" height="132" />
                                     </div>
-                                    <form>
+                                    <form action="{{ route('login') }}" method="post">
+                                        @csrf
                                         <div class="mb-3">
                                             <label class="form-label">Email</label>
                                             <input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email" />
@@ -61,8 +62,8 @@
                                             </label>
                                         </div>
                                         <div class="text-center mt-3">
-                                            <a href="index.html" class="btn btn-lg btn-primary">Sign in</a>
-                                            <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+                                            {{-- <a href="index.html" class="btn btn-lg btn-primary">Sign in</a> --}}
+                                             <button type="submit" class="btn btn-lg btn-primary">Sign in</button>
                                         </div>
                                     </form>
                                 </div>

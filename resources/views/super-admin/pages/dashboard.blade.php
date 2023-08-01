@@ -8,7 +8,7 @@
         <body>
             <!-- Main Content -->
             <div class="container mt-4">
-                <h2>Welcome, Super Admin</h2>
+                <h2>Welcome, {{ $user->name }}</h2>
                 <div class="row mt-4">
                     <div class="col-lg-4">
                         <!-- User Management -->

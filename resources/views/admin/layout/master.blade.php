@@ -12,7 +12,7 @@
         <!-- sidebar end -->
         <div class="main">
         <!-- top navbar start -->
-        @include('admin.layout.partials.navbar')
+        @include('navbar')
         <!-- top navbar end -->
         <!-- main conten start-0 -->
         @yield('content')
@@ -25,6 +25,6 @@
 
     @include('admin.layout.partials.script')
     @yield('script')
-    
+
 </body>
 </html>

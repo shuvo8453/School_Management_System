@@ -20,8 +20,8 @@ class AdminController extends Controller
        return view('admin.pages.profile');
 
     }
-    public function signing(){
-       return view('admin.pages.signing');
+    public function signin(){
+       return view('signin');
 
     }
     public function signup(){
