@@ -17,12 +17,10 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)){
             $user = Auth::user();
-            // dd($user);
             return $this->authorizeAccess($user);
         }else{
             return redirect()->back()->withErrors(['message' => 'Invalid credentials']);
         }
-        // dd($credentials);
     }
 
     private function authorizeAccess($user){
@@ -31,8 +29,6 @@ class LoginController extends Controller
         if($role->name === "SUPER_ADMIN"){
             return redirect()->route('superadmin.dashboard');
         }
-
-        // dd($role->name);
     }
 
     public function logout()
