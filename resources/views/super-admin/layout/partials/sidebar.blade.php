@@ -10,28 +10,25 @@
             </li>
 
             <li class="sidebar-item active">
-                <a class="sidebar-link" href=" {{ route('dashboard') }}  ">
+                <a class="sidebar-link" href=" {{ route('superadmin.dashboard') }}  ">
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
                 </a>
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="{{ route('profile') }}">
+                <a class="sidebar-link" href="{{ route('superadmin.profile') }}">
                     <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
                 </a>
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="{{ route('/login') }}">
-                    <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign In</span>
+                <a class="sidebar-link" href="{{ route('superadmin.profile') }}">
+                    <i class="align-middle" data-feather="user"></i> <span class="align-middle">Admin</span>
                 </a>
             </li>
 
-            <li class="sidebar-item">
-                <a class="sidebar-link" href="{{ route('signup') }}">
-                    <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign Up</span>
-                </a>
-            </li>
+
+
 
             {{-- <li class="sidebar-item">
                 <a class="sidebar-link" href="{{ route('blank') }}">

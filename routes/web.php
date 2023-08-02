@@ -18,15 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function() {
     return view('signin');
-});
+})->name('signin');
 Route::post('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // for super admin
 Route::get('/superadmin/dashboard', [SuperAdminController::class, 'dashboard'])->name('superadmin.dashboard');
-Route::get('/admin/profiles', [SuperAdminController::class, 'Profile'])->name('superadmin.profile');
-Route::get('/admin/signing', [SuperAdminController::class, 'signin'])->name('signin');
-Route::get('/admin/signup', [SuperAdminController::class, 'signup'])->name('signup');
+Route::get('/superadmin/profiles', [SuperAdminController::class, 'Profile'])->name('superadmin.profile');
+Route::get('/superadmin/admin', [SuperAdminController::class, 'Admin'])->name('superadmin.admin');
+Route::post('/superadmin/admin', [SuperAdminController::class, 'AdminStore'])->name('superadmin.admin.store');
+
 
 
 // for admin

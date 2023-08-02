@@ -14,9 +14,9 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-
         if(Auth::attempt($credentials)){
             $user = Auth::user();
+            // return Auth::user()->hasAnyRole('SUPER_ADMIN') ? redirect()->route('superadmin.dashboard') : redirect()->back()->withErrors(['message' => 'Invalid credentials']);
             return $this->authorizeAccess($user);
         }else{
             return redirect()->back()->withErrors(['message' => 'Invalid credentials']);
@@ -24,10 +24,11 @@ class LoginController extends Controller
     }
 
     private function authorizeAccess($user){
-        $role = Role::get()->first();
 
-        if($role->name === "SUPER_ADMIN"){
+        if($user->hasAnyRole('SUPER_ADMIN')){
             return redirect()->route('superadmin.dashboard');
+        }else{
+            return redirect()->back()->withErrors(['message' => 'Invalid credentials']);
         }
     }
 
