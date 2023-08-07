@@ -1,4 +1,4 @@
-@extends('admin.layout.master')
+@extends('layout.master')
 @section('content')
 <main class="content">
                 <div class="container-fluid p-0">
@@ -269,5 +269,5 @@
                     </div>
 
                 </div>
-            </main>  
+            </main>
 @endsection
