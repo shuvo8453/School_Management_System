@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,6 +27,7 @@ class LoginController extends Controller
         if($user->hasAnyRole('SUPER_ADMIN')){
             return redirect()->route('superadmin.dashboard');
         }else{
+            Auth::logout();
             return redirect()->back()->withErrors(['message' => 'Invalid credentials']);
         }
     }
@@ -35,6 +35,6 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return view('signin');
+        return redirect()->route('login.view');
     }
 }

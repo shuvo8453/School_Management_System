@@ -1,4 +1,4 @@
-@extends('super-admin.layout.master')
+@extends('layout.master')
 @section('content')
 
 
@@ -72,8 +72,8 @@
                             <td>{{ $user->email }}</td>
                             <td>
                                 {{-- <a class="add" title="" data-toggle="tooltip" data-original-title="Add"><i class="material-icons"></i></a> --}}
-                                <a class="edit" title="" data-toggle="tooltip" data-original-title="Edit">edit</a>
-                                <a class="delete" title="" data-toggle="tooltip" data-original-title="Delete">delete</a>
+                                <a class="edit" title="" data-toggle="tooltip" data-original-title="Edit"><i class="align-middle" data-feather="edit"></i></a>
+                                <a class="delete" title="" data-toggle="tooltip" data-original-title="Delete"><i class="align-middle" data-feather="delete"></i></a>
                             </td>
                         </tr>
                         @endforeach
