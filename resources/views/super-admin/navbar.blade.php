@@ -8,7 +8,7 @@
 
 <div class="dropdown-menu dropdown-menu-end">
     <a class="dropdown-item" href="{{ route('superadmin.profile') }}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-    <a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings</a>
+    {{-- <a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings</a> --}}
     <div class="dropdown-divider"></div>
     <form action="{{ route('logout') }}" method="post">
         @csrf
